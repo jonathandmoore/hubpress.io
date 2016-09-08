@@ -4,7 +4,18 @@
     "repositoryName": "jonathandmoore.github.io",
     "branch": "master"
   },
+  "site": {
+    "title": "Jonathan Moore",
+    "description": "Adventures in bio data science and engineering"
+  },
+  "socialnetwork": {
+    "email": "drjonathandavidmoore@gmail.com",
+    "twitter": "jonathan1moore",
+    "googleplus": "doctorbrassica@gmail.com",
+    "linkedin": "jaymoore",
+    "github": "jonathandmoore"
+  },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
