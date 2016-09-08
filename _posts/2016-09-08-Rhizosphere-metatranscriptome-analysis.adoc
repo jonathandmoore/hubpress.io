@@ -40,5 +40,3 @@ WEVote looks promising in this respect, and I think it's a rational approach to 
 With that in mind, we will be using a couple of different methods for both taxonomic and functional classification, and correlating the results.  We will also be paying careful attention to the databases we use for the classifications, as this has as much effect, if not more, than the chosen algorithm.
 
 More later.
-
-
