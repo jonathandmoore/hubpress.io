@@ -12,14 +12,14 @@ My initial plan for our metatranscriptome analysis goes something like this:
 First the usual http://earlham.ac.uk primary analysis on the data, comprising:
 
 	Demultiplexing with bcl2fastq
-    FASTQC
-    Kontaminant screening of a random sample of reads, for likely suspects
-    MEGAN screening of a random sample of reads, for a taxonomic overview of the sample
+	FASTQC
+	Kontaminant screening of a random sample of reads, for likely suspects
+	MEGAN screening of a random sample of reads, for a taxonomic overview of the sample
 	
 Providing the quality looks good, we'll move on to develop the metatranscriptome analysis.  First a clean-up.
 
 	Trim using Trimmomatic to remove low quality segments and adaptors
-    Assemble read paris using PANDAseq (probably)
+	Assemble read paris using PANDAseq (probably)
 
 Then comes the first fork in the road. We would like to treat rRNA and mRNA sequence reads differently in the subsequent steps in the analysis.
 
