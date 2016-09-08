@@ -9,11 +9,11 @@
     "description": "Bio data fettling"
   },
   "socialnetwork": {
-    "email": "drjonathandavidmoore@gmail.com",
-    "twitter": "jonathan1moore",
-    "googleplus": "doctorbrassica@gmail.com",
+    "email": "mailto:drjonathandavidmoore@gmail.com",
+    "twitter": "https://twitter.com/jonathan1moore",
+    "googleplus": "",
     "linkedin": "jaymoore",
-    "github": "jonathandmoore"
+    "github": "https://github.com/jonathandmoore"
   },
   "theme": {
     "name": "ghostium"
