@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 08 Sep 2016 14:19:45 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Rhizosphere metatranscriptome analysis]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 08 Sep 2016 21:37:03 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Rhizosphere metatranscriptome analysis  0/n]]></title><description><![CDATA[<div class="paragraph">
 <p>I&#8217;m a co-investigator on the BBSRC/NERC-funded Roots of Decline project looking at the interactions between crop rotations, rhizosphere microbiome and oilseed rape crop yield.  The project has been tweeting progress <a href="https://twitter.com/BBSRC_SARISA" class="bare">https://twitter.com/BBSRC_SARISA</a> and it&#8217;s been interesting to see the combination of experimental plots, field sampling from farms, and lab work.</p>
 </div>
 <div class="paragraph">
@@ -8,7 +8,7 @@
 <p>I took a look at the EBI metagenomics portal, and took some inspiration from their pipeline: <a href="https://www.ebi.ac.uk/metagenomics/about" class="bare">https://www.ebi.ac.uk/metagenomics/about</a></p>
 </div>
 <div class="paragraph">
-<p>My initial plan for our metatranscriptome analysis goes something like this:</p>
+<p>My initial plan for our metatranscriptome analysis goes like this:</p>
 </div>
 <div class="paragraph">
 <p>First the usual <a href="http://earlham.ac.uk" class="bare">http://earlham.ac.uk</a> primary analysis on the data, comprising:</p>
@@ -17,7 +17,7 @@
 <div class="content">
 <pre>Demultiplexing with bcl2fastq
 FASTQC
-Kontaminant screening of a random sample of reads, for likely suspects
+Kontaminant screening of a random sample of reads, for likely contaminants
 MEGAN screening of a random sample of reads, for a taxonomic overview of the sample</pre>
 </div>
 </div>
@@ -27,28 +27,29 @@ MEGAN screening of a random sample of reads, for a taxonomic overview of the sam
 <div class="literalblock">
 <div class="content">
 <pre>Trim using Trimmomatic to remove low quality segments and adaptors
-Assemble read paris using PANDAseq (probably)</pre>
+Assemble read pairs using PANDAseq (probably)</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Then comes the first fork in the road. We would like to treat rRNA and mRNA sequence reads differently in the subsequent steps in the analysis.</p>
+<p>Then comes the first fork in the road. We would like to treat ncRNA and mRNA sequence reads differently in the subsequent steps in the analysis.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>Use SortMeRNA to classify sequence reads as rRNA and mRNA</pre>
+<pre>Use SortMeRNA to classify sequence reads containing rRNA
+   Something to pull out tRNAs</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>There are some complexities with this, as the SortMeRNA rRNA database may not be very sensitive for soil organisms, particularly eukaryotes. There is a lot of underexplored genomic dark matter in the soil, so I&#8217;m told, so we may do some experimenting with various alternative rRNA databases.</p>
 </div>
 <div class="paragraph">
-<p>Once we have the rRNA/mRNA classification of each molecule nailed down, on to the detailed classifications.</p>
+<p>Once we have the ncRNA/mRNA classification of each molecule nailed down, on to the detailed classifications.</p>
 </div>
 <div class="paragraph">
 <p>Using rRNA sequences to do taxonomic classification is relatively well explored territory.  We will most likely stick to a Qiime analysis here, but again, we are likely to want to use a specialised database for classification rather than SILVA or GreenGenes.</p>
 </div>
 <div class="paragraph">
-<p>Classifying mRNA sequences is a bit more tricky.</p>
+<p>Classifying mRNA sequences is likely a bit more tricky.</p>
 </div>
 <div class="paragraph">
 <p>I recently read that if you ask three different classification methods to classify a sequence read, you are only likely to get two of them to agree on a genus classification about 60% of the time, and only then on reads of 500nt.  Species-level classification is even worse.  Functional classification is even worse still <a href="http://www.nature.com/articles/srep19233" class="bare">http://www.nature.com/articles/srep19233</a>.</p>
@@ -61,4 +62,4 @@ Assemble read paris using PANDAseq (probably)</pre>
 </div>
 <div class="paragraph">
 <p>More later.</p>
-</div>]]></description><link>https://jonathandmoore.github.io/2016/09/08/Rhizosphere-metatranscriptome-analysis.html</link><guid isPermaLink="true">https://jonathandmoore.github.io/2016/09/08/Rhizosphere-metatranscriptome-analysis.html</guid><dc:creator><![CDATA[Jonathan Moore]]></dc:creator><pubDate>Thu, 08 Sep 2016 00:00:00 GMT</pubDate></item></channel></rss>
+</div>]]></description><link>https://jonathandmoore.github.io/2016/09/08/Rhizosphere-metatranscriptome-analysis-0n.html</link><guid isPermaLink="true">https://jonathandmoore.github.io/2016/09/08/Rhizosphere-metatranscriptome-analysis-0n.html</guid><dc:creator><![CDATA[Jonathan Moore]]></dc:creator><pubDate>Thu, 08 Sep 2016 00:00:00 GMT</pubDate></item></channel></rss>
