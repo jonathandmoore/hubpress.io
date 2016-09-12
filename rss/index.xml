@@ -1,4 +1,69 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 11 Sep 2016 19:32:07 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Rhizosphere metatranscriptome analysis  0/n]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 12:08:18 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
+<p>Recently I&#8217;ve seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It&#8217;s a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.</p>
+</div>
+<div class="paragraph">
+<p>For the past couple of years, my answer has been that the best method is 'all of them'.  I&#8217;ve come round to thinking that an ensemble of methods probably gives the best result most of the time.</p>
+</div>
+<div class="paragraph">
+<p>This isn&#8217;t really a new problem or a new question.  Before RNA-Seq was <em>de rigeur</em> for expression experiments, we noticed that in microarray experiments, the list of DE genes varied depending on the method used to estimate DE.  In our projects at the time, the 'best' method for DE analysis was a source of regular debate in project meetings among bioinformaticians, or statisticians, or modellers.</p>
+</div>
+<div class="paragraph">
+<p>We came to the conclusion that the most robust approach was to use multiple methods, and to correlate them.  For example, in this timeseries analysis (www.plantcell.org/content/24/9/3530.full), we used two different methods for estimating whether genes were DE.  We then did a manual (or is that visual?) review of the expression profiles of the anomalous cases where only one of the methods score the gene as significantly DE.  This review led us to a conclusion about which method was more reliable in the edge cases for this particular data set.</p>
+</div>
+<div class="paragraph">
+<p>Fast forward a bit and the same issue is live in RNA-Seq expression analysis.  You&#8217;ve aligned your reads or analysed your kmer content, and have a score or count for each gene or transcript, and you need to decide which tool to use to estimate DE.</p>
+</div>
+<div class="paragraph">
+<p>This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::https://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg[]</p>
+</div>
+<div class="paragraph">
+<p><strong>The problem is how to take an ensemble of DE analysis methods.</strong></p>
+</div>
+<div class="paragraph">
+<p>My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  We demand that genes are DE or not, but actually, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.</p>
+</div>
+<div class="paragraph">
+<p>I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  Being a fettler at heart, I took the obvious approach.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>I used each tool to generate a ranked order list of all genes,
+       sorted by q-value or FDR.
+For each gene, I calculated its sum of ranks,
+       by adding up the ranks each individual method had given the gene.
+I sorted the gene list by this rank-sum metric.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This gave me a list of genes, sorted from most likely to be DE, as estimated by all the methods, to least likely.  Bingo, I have an ensemble DE metric.</p>
+</div>
+<div class="paragraph">
+<p>The only thing that remains is to answer that dreaded biologist question "So which genes are DE?".  The choice of cut-off in the list.</p>
+</div>
+<div class="paragraph">
+<p>My view on cut-offs is you cut your list to meet your needs.</p>
+</div>
+<div class="paragraph">
+<p>If you want a strict cut-off, because you are going to spend money on follow-up qPCR experiments, then take a cutoff where all genes above the cut-off are assessed as significant by all methods.  If you want a lax cut-off, because you want sensitivity, and you are going to follow up with a cheap bioinformatic method like functional enrichment testing, then choose the cutoff accordingly - cut-off at the point where all genes above the cutoff were found significant by at least one method, or at least two.</p>
+</div>
+<div class="paragraph">
+<p>This ensemble approach is flexible and extensible to as many different methods of DE assessment as you can choose.  My initial choices might be DESeq2, EdgeR, BaySeq, cuffdiff, and limma-voom, because they all have such different models of what it means to be DE, so are likely to form an interesting ensemble.  You might prefer your own or different methods.</p>
+</div>
+<div class="paragraph">
+<p>I think there is a right answer to "Which methods should I use in my ensemble?" and I think it is "All of them".</p>
+</div>
+<div class="paragraph">
+<p>The point is, all methods tend to have a sweet spot where they are particularly sensitive and/or specific, so the more methods you use in your ensemble, the more potential you have for a generally good ensemble.</p>
+</div>
+<div class="paragraph">
+<p>In our first public outing for this method (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3915549/" class="bare">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3915549/</a>) we used three different methods of DE assessment, and we cutoff at the point where at least two methods classified a gene as significant.  Our approach was queried by one of our anonymous reviewers.  They asked whether this was an accepted method, and whether we could point to evidence that it would work.  We responded with logic, rather than direct evidence.  We showed that we were using a number of well-cited accepted methods, and correlating their results for robustness.  We also showed that the burgeoning fields of Data Science, and competitive mathematical modelling, were rich with examples of ensemble methods outperforming a single method.  Our argument was accepted.</p>
+</div>
+<div class="paragraph">
+<p>The obvious extension of the approach is to start weighting the methods in the ensemble, either based on prior information about how good they are, or where their sweet spots are, or using an iterative approach based on the data in hand.  I might get back to that later.</p>
+</div>
+<div class="paragraph">
+<p>Have you used an ensemble method for estimating differential gene expression?  Do you think this is a worthwhile approach?</p>
+</div>]]></description><link>https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html</link><guid isPermaLink="true">https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html</guid><dc:creator><![CDATA[Jonathan Moore]]></dc:creator><pubDate>Mon, 12 Sep 2016 00:00:00 GMT</pubDate></item><item><title><![CDATA[Rhizosphere metatranscriptome analysis  0/n]]></title><description><![CDATA[<div class="paragraph">
 <p>I&#8217;m a co-investigator on the BBSRC/NERC-funded Roots of Decline project looking at the interactions between crop rotations, rhizosphere microbiome and oilseed rape crop yield.  The project has been tweeting progress <a href="https://twitter.com/BBSRC_SARISA" class="bare">https://twitter.com/BBSRC_SARISA</a> and it&#8217;s been interesting to see the combination of experimental plots, field sampling from farms, and lab work.</p>
 </div>
 <div class="paragraph">
