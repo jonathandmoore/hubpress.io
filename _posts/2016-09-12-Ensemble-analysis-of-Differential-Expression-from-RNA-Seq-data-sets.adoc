@@ -1,1 +1,4 @@
-= Ensemble DE analysis of RNA-Seq data sets
+= Ensemble analysis of Differential Expression from RNA-Seq data sets
+
+Recently I've seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It's a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.
+
