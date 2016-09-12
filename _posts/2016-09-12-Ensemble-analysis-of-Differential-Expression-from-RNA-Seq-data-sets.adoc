@@ -12,3 +12,11 @@ Fast forward a bit and the same issue is live in RNA-Seq expression analysis.  Y
 
 This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::https://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg.
 
+
+*The problem is how to take an ensemble of DE analysis methods.*
+
+My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  We demand that genes are DE or not, but actually, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.
+
+I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  
+
+
