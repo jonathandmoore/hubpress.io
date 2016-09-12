@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 12:08:18 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 12:10:40 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
 <p>Recently I&#8217;ve seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It&#8217;s a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.</p>
 </div>
 <div class="paragraph">
@@ -14,7 +14,7 @@
 <p>Fast forward a bit and the same issue is live in RNA-Seq expression analysis.  You&#8217;ve aligned your reads or analysed your kmer content, and have a score or count for each gene or transcript, and you need to decide which tool to use to estimate DE.</p>
 </div>
 <div class="paragraph">
-<p>This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::https://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg[]</p>
+<p>This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::http://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg[]</p>
 </div>
 <div class="paragraph">
 <p><strong>The problem is how to take an ensemble of DE analysis methods.</strong></p>
