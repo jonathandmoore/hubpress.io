@@ -2,3 +2,7 @@
 
 Recently I've seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It's a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.
 
+For the past couple of years, my answer has been that the best method is 'all of them'.  I've come round to thinking that an ensemble of methods probably gives the best result most of the time.
+
+This isn't really a new problem or a new question.  Before RNA-Seq was _de rigeur_ for expression experiments, we noticed that in microarray experiments, the list of DE genes varied depending on the method used to estimate DE.  In our projects at the time, the 'best' method for DE analysis was a source of regular debate in project meetings among bioinformaticians, or statisticians, or modellers.
+
