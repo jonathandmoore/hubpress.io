@@ -6,4 +6,9 @@ For the past couple of years, my answer has been that the best method is 'all of
 
 This isn't really a new problem or a new question.  Before RNA-Seq was _de rigeur_ for expression experiments, we noticed that in microarray experiments, the list of DE genes varied depending on the method used to estimate DE.  In our projects at the time, the 'best' method for DE analysis was a source of regular debate in project meetings among bioinformaticians, or statisticians, or modellers.
 
-We came to the conclusion that the most robust approach was to use multiple methods, and to correlate them.  For example, in this timeseries analysis, we used two different methods for estimating whether genes were DE, and we then did a manual review of the expression profiles of the anomalous cases where only one of the methods score the gene as significantly DE.
+We came to the conclusion that the most robust approach was to use multiple methods, and to correlate them.  For example, in this timeseries analysis (www.plantcell.org/content/24/9/3530.full), we used two different methods for estimating whether genes were DE.  We then did a manual (or is that visual?) review of the expression profiles of the anomalous cases where only one of the methods score the gene as significantly DE.  This review led us to a conclusion about which method was more reliable in the edge cases for this particular data set.
+
+Fast forward a bit and the same issue is live in RNA-Seq expression analysis.  You've aligned your reads or analysed your kmer content, and have a score or count for each gene or transcript, and you need to decide which tool to use to estimate DE.
+
+This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::https://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg.
+
