@@ -19,9 +19,9 @@ My insight, and my gut feeling, was that when we take the Venn diagram/p-value c
 
 I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  Being a fettler at heart, I took the obvious approach.
 
-	*I used each tool to generate a ranked order list of all genes*, sorted by q-value or FDR.
-	*For each gene, I calculated its sum of ranks*, by adding up the ranks each individual method had given the gene.
-	*I sorted the gene list by this rank-sum metric*.
+	I used each tool to generate a ranked order list of all genes, sorted by q-value or FDR.
+	For each gene, I calculated its sum of ranks, by adding up the ranks each individual method had given the gene.
+	I sorted the gene list by this rank-sum metric.
 
 
 This gave me a list of genes, sorted from most likely to be DE, as estimated by all the methods, to least likely.  Bingo, I have an ensemble DE metric.
