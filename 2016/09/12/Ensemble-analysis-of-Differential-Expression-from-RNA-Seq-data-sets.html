@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1473683932305"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1473683932305"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1473683932305"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1473693142653"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1473693142653"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1473693142653"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1473683932305"></script>
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1473693142653"></script>
 
     <link rel="canonical" href="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
     <meta name="referrer" content="origin" />
@@ -159,7 +159,7 @@ null
             <ul class="post-meta-list">
               <li class="post-meta-item">
                 <time datetime="2016-09-12" itemprop="datePublished">
-                  14 hours ago
+                  16 hours ago
                 </time>
               </li>
               <li class="post-meta-item">
@@ -241,6 +241,15 @@ I sorted the gene list by this rank-sum metric.</pre>
 </div>
 <div class="paragraph">
 <p>If you want a strict cut-off, because you are going to spend money on follow-up qPCR experiments, then take a cutoff where all genes above the cut-off are assessed as significant by all methods.  If you want a lax cut-off, because you want sensitivity, and you are going to follow up with a cheap bioinformatic method like functional enrichment testing, then choose the cutoff accordingly - cut-off at the point where all genes above the cutoff were found significant by at least one method, or at least two.</p>
+</div>
+<div class="paragraph">
+<p>I think there may also be principled ways to come up with a cut-off.</p>
+</div>
+<div class="paragraph">
+<p>One would expect that there is a region at the significant end of the list, where the rank correlation between methods is high, and a region at the non-significant end of the list where rank correlation between methods is low to non-existent.  One could try to detect the zone where the rank correlation starts to decay to an unacceptable degree.</p>
+</div>
+<div class="paragraph">
+<p>A different method of choosing a principled cutoff might be through some kind of leave-one-out cross-validation approach.</p>
 </div>
 <div class="paragraph">
 <p>This ensemble approach is flexible and extensible to as many different methods of DE assessment as you can choose.  My initial choices might be DESeq2, EdgeR, BaySeq, cuffdiff, and limma-voom, because they all have such different models of what it means to be DE, so are likely to form an interesting ensemble.  You might prefer your own or different methods.</p>
@@ -339,7 +348,7 @@ I sorted the gene list by this rank-sum metric.</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1473683932305"></script>
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1473693142653"></script>
 
 
   </body>
