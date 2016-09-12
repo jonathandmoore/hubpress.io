@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 12:10:40 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 12:19:52 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
 <p>Recently I&#8217;ve seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It&#8217;s a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.</p>
 </div>
 <div class="paragraph">
@@ -8,13 +8,24 @@
 <p>This isn&#8217;t really a new problem or a new question.  Before RNA-Seq was <em>de rigeur</em> for expression experiments, we noticed that in microarray experiments, the list of DE genes varied depending on the method used to estimate DE.  In our projects at the time, the 'best' method for DE analysis was a source of regular debate in project meetings among bioinformaticians, or statisticians, or modellers.</p>
 </div>
 <div class="paragraph">
-<p>We came to the conclusion that the most robust approach was to use multiple methods, and to correlate them.  For example, in this timeseries analysis (www.plantcell.org/content/24/9/3530.full), we used two different methods for estimating whether genes were DE.  We then did a manual (or is that visual?) review of the expression profiles of the anomalous cases where only one of the methods score the gene as significantly DE.  This review led us to a conclusion about which method was more reliable in the edge cases for this particular data set.</p>
+<p>We came to the conclusion that the most robust approach was to use multiple methods, and to correlate them.  For example, in this timeseries analysis <a href="http://www.plantcell.org/content/24/9/3530.full" class="bare">http://www.plantcell.org/content/24/9/3530.full</a>, we used two different methods for estimating whether genes were DE.  We then did a manual (or is that visual?) review of the expression profiles of the anomalous cases where only one of the methods score the gene as significantly DE.  This review led us to a conclusion about which method was more reliable in the edge cases for this particular data set.</p>
 </div>
 <div class="paragraph">
 <p>Fast forward a bit and the same issue is live in RNA-Seq expression analysis.  You&#8217;ve aligned your reads or analysed your kmer content, and have a score or count for each gene or transcript, and you need to decide which tool to use to estimate DE.</p>
 </div>
 <div class="paragraph">
-<p>This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::http://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg[]</p>
+<p>This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the problem:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="http://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg" alt="12864 2015 Article 7208 Fig6 HTML.jpg">
+</div>
+</div>
+<div class="paragraph">
+<p>Each method comes up with a different list of genes that are DE. There is some overlap between methods, but it&#8217;s not immediately clear which method is 'right' or 'wrong' about which particular genes.</p>
+</div>
+<div class="paragraph">
+<p>My answer is to believe all the methods, to some extent, and to take an ensemble of methods as my estimate of DE.</p>
 </div>
 <div class="paragraph">
 <p><strong>The problem is how to take an ensemble of DE analysis methods.</strong></p>
