@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Ensemble analysis of Differential Expression from RNA-Seq data sets</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ensemble analysis of Differential Expression from RNA-Seq data sets">
+    <meta name="twitter:description" content="">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ensemble analysis of Differential Expression from RNA-Seq data sets">
+    <meta property="og:description" content="">
+
+    <!-- <meta name="twitter:site" content="">
+
+<meta name="twitter:creator" content="">
+
+<meta name="google-site-verification" content="">
+
+<meta property="fb:admins" content="">
+ -->
+
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
+
+    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1473682098693"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1473682098693"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1473682098693"/>
+
+
+
+
+    <script type="text/javascript">
+      var ga_ua = 'UA-XXXXX-X';
+      
+      var disqus_shortname = 'example';
+      
+      var enable_pjax = true;
+
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Ghostium Globals
+      // ==============
+      window.GHOSTIUM = {};
+      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
+
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1473682098693"></script>
+
+    <link rel="canonical" href="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Jonathan Moore" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ensemble analysis of Differential Expression from RNA-Seq data sets" />
+    <meta property="og:description" content="Recently I&amp;#8217;ve seen discussions among bioinformatians of which is &#x27;the best&#x27; method for DE analysis of RNA-Seq data.  It&amp;#8217;s a recurring theme, and mostly the answer is &#x27;it depends on context and aims&#x27; although there is also evidence that some methods are just better than others." />
+    <meta property="og:url" content="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ensemble analysis of Differential Expression from RNA-Seq data sets" />
+    <meta name="twitter:description" content="Recently I&amp;#8217;ve seen discussions among bioinformatians of which is &#x27;the best&#x27; method for DE analysis of RNA-Seq data.  It&amp;#8217;s a recurring theme, and mostly the answer is &#x27;it depends on context and aims&#x27; although there is also evidence that some methods are just better than others." />
+    <meta name="twitter:url" content="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
+    
+    <script type="application/ld+json">
+null
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Jonathan Moore" href="https://jonathandmoore.github.io/rss/" />
+  </head>
+  <body class="post-template">
+
+    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
+    <nav tabindex="-1" class="drawer">
+      <div class="drawer-container">
+        <!--.drawer-search(role="search")-->
+        <ul role="navigation" class="drawer-list">
+          
+          <li class="drawer-list-item">
+            <a href="https://jonathandmoore.github.io" data-pjax>
+              <i class="fa fa-home"></i>Home
+            </a>
+          </li>
+          <!-- <li class="drawer-list-item">
+            <a href="https://jonathandmoore.github.io" title="Jonathan Moore" data-pjax>
+              <i class="fa fa-list-alt"></i>All posts
+            </a>
+          </li> -->
+          <li class="drawer-list-item">
+            <a href="https://jonathandmoore.github.io/rss/">
+              <i class="fa fa-rss"></i>Subscribe to Feed
+            </a>
+          </li>
+          <li class="drawer-list-divider"></li>
+          <li class="drawer-list-item drawer-list-title">
+            Follow me
+          </li>
+          
+          
+          <li class="drawer-list-item">
+            <a href="https://twitter.com/jonathan1moore" title="Twitter" target="_blank">
+              <i class="fa fa-twitter"></i>Twitter
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="https://github.com/jonathandmoore" title="Github" target="_blank">
+              <i class="fa fa-github"></i>Github
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="https://plus.google.com/u/0/113375779259618122038" title="Google+" target="_blank">
+              <i class="fa fa-google-plus"></i>Google+
+            </a>
+          </li>
+          <li class="drawer-list-item">
+            <a href="https://www.linkedin.com/in/jaymoore" title="LinkedIn" target="_blank">
+              <i class="fa fa-linkedin"></i>LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="drawer-overlay"></div>
+    <main id="container" role="main" class="container">
+      <div class="surface">
+        <div class="surface-container">
+          <div data-pjax-container class="content">
+            
+<section class="wrapper wrapper-post">
+  <div class="wrapper-container">
+    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post">
+        <section class="post-container">
+          <header class="post-header">
+            <ul class="post-meta-list">
+              <li class="post-meta-item">
+                <time datetime="2016-09-12" itemprop="datePublished">
+                  13 hours ago
+                </time>
+              </li>
+              <li class="post-meta-item">
+                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
+              </li>
+            </ul>
+            <h1 itemprop="name headline" class="post-title"><a href="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" itemprop="url" data-pjax title="Ensemble analysis of Differential Expression from RNA-Seq data sets">Ensemble analysis of Differential Expression from RNA-Seq data sets</a></h1>
+            <!--h2 itemprop="about" class="post-subtitle"></h2-->
+          </header>
+          <aside class="post-side">
+            <div class="post-author">
+                <a href="http://www.earlham.ac.uk/jonathan-moore" class="post-author-avatar">
+                  <img src="https://avatars.githubusercontent.com/u/7888298?v&#x3D;3" alt="Jonathan Moore">
+                </a>
+              <div class="post-author-info">
+                <a href="http://www.earlham.ac.uk/jonathan-moore" class="post-author-name">
+                  Jonathan Moore
+                </a>
+                <p class="post-author-bio"></p>
+              </div>
+            </div>
+          </aside>
+          <div itemprop="articleBody" class="post-body">
+            <div class="paragraph">
+<p>Recently I&#8217;ve seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It&#8217;s a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.</p>
+</div>
+<div class="paragraph">
+<p>For the past couple of years, my answer has been that the best method is 'all of them'.  I&#8217;ve come round to thinking that an ensemble of methods probably gives the best result most of the time.</p>
+</div>
+<div class="paragraph">
+<p>This isn&#8217;t really a new problem or a new question.  Before RNA-Seq was <em>de rigeur</em> for expression experiments, we noticed that in microarray experiments, the list of DE genes varied depending on the method used to estimate DE.  In our projects at the time, the 'best' method for DE analysis was a source of regular debate in project meetings among bioinformaticians, or statisticians, or modellers.</p>
+</div>
+<div class="paragraph">
+<p>We came to the conclusion that the most robust approach was to use multiple methods, and to correlate them.  For example, in this timeseries analysis (www.plantcell.org/content/24/9/3530.full), we used two different methods for estimating whether genes were DE.  We then did a manual (or is that visual?) review of the expression profiles of the anomalous cases where only one of the methods score the gene as significantly DE.  This review led us to a conclusion about which method was more reliable in the edge cases for this particular data set.</p>
+</div>
+<div class="paragraph">
+<p>Fast forward a bit and the same issue is live in RNA-Seq expression analysis.  You&#8217;ve aligned your reads or analysed your kmer content, and have a score or count for each gene or transcript, and you need to decide which tool to use to estimate DE.</p>
+</div>
+<div class="paragraph">
+<p>This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::https://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg[]</p>
+</div>
+<div class="paragraph">
+<p><strong>The problem is how to take an ensemble of DE analysis methods.</strong></p>
+</div>
+<div class="paragraph">
+<p>My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  We demand that genes are DE or not, but actually, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.</p>
+</div>
+<div class="paragraph">
+<p>I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  Being a fettler at heart, I took the obvious approach.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>I used each tool to generate a ranked order list of all genes,
+       sorted by q-value or FDR.
+For each gene, I calculated its sum of ranks,
+       by adding up the ranks each individual method had given the gene.
+I sorted the gene list by this rank-sum metric.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This gave me a list of genes, sorted from most likely to be DE, as estimated by all the methods, to least likely.  Bingo, I have an ensemble DE metric.</p>
+</div>
+<div class="paragraph">
+<p>The only thing that remains is to answer that dreaded biologist question "So which genes are DE?".  The choice of cut-off in the list.</p>
+</div>
+<div class="paragraph">
+<p>My view on cut-offs is you cut your list to meet your needs.</p>
+</div>
+<div class="paragraph">
+<p>If you want a strict cut-off, because you are going to spend money on follow-up qPCR experiments, then take a cutoff where all genes above the cut-off are assessed as significant by all methods.  If you want a lax cut-off, because you want sensitivity, and you are going to follow up with a cheap bioinformatic method like functional enrichment testing, then choose the cutoff accordingly - cut-off at the point where all genes above the cutoff were found significant by at least one method, or at least two.</p>
+</div>
+<div class="paragraph">
+<p>This ensemble approach is flexible and extensible to as many different methods of DE assessment as you can choose.  My initial choices might be DESeq2, EdgeR, BaySeq, cuffdiff, and limma-voom, because they all have such different models of what it means to be DE, so are likely to form an interesting ensemble.  You might prefer your own or different methods.</p>
+</div>
+<div class="paragraph">
+<p>I think there is a right answer to "Which methods should I use in my ensemble?" and I think it is "All of them".</p>
+</div>
+<div class="paragraph">
+<p>The point is, all methods tend to have a sweet spot where they are particularly sensitive and/or specific, so the more methods you use in your ensemble, the more potential you have for a generally good ensemble.</p>
+</div>
+<div class="paragraph">
+<p>In our first public outing for this method (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3915549/" class="bare">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3915549/</a>) we used three different methods of DE assessment, and we cutoff at the point where at least two methods classified a gene as significant.  Our approach was queried by one of our anonymous reviewers.  They asked whether this was an accepted method, and whether we could point to evidence that it would work.  We responded with logic, rather than direct evidence.  We showed that we were using a number of well-cited accepted methods, and correlating their results for robustness.  We also showed that the burgeoning fields of Data Science, and competitive mathematical modelling, were rich with examples of ensemble methods outperforming a single method.  Our argument was accepted.</p>
+</div>
+<div class="paragraph">
+<p>The obvious extension of the approach is to start weighting the methods in the ensemble, either based on prior information about how good they are, or where their sweet spots are, or using an iterative approach based on the data in hand.  I might get back to that later.</p>
+</div>
+<div class="paragraph">
+<p>Have you used an ensemble method for estimating differential gene expression?  Do you think this is a worthwhile approach?</p>
+</div>
+          </div>
+          <footer class="post-footer">
+            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
+                <a href="http://www.earlham.ac.uk/jonathan-moore" class="post-author-avatar">
+                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/7888298?v&#x3D;3" alt="Jonathan Moore">
+                </a>
+              <div class="post-author-info">
+                <h4 class="post-footer-heading">Written By</h4>
+                <a href="http://www.earlham.ac.uk/jonathan-moore" itemprop="url" class="post-author-name">
+                  <span itemprop="name">Jonathan Moore</span>
+                </a>
+                <p itemprop="description" class="post-author-bio"></p>
+                  <p class="post-author-location">Norwich, UK</p>
+                  <p class="post-author-website">
+                    <a href="http://www.earlham.ac.uk/jonathan-moore" rel="nofollow">http://www.earlham.ac.uk/jonathan-moore</a>
+                  </p>
+                <p class="post-info">
+                  <b class="post-info-title">Published on</b>
+                  <time class="post-date">September 12, 2016</time>
+                </p>
+              </div>
+            </div>
+            <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+            </div>
+          </footer>
+        </section>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"></div>
+      </section>
+    </article>
+
+    <footer role="contentinfo" class="footer">
+      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Jonathan Moore</span>. 2016. All Rights Reserved.</small></p>
+      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
+      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
+      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+    </footer>
+  </div>
+</section>
+
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+  var disqus_shortname = 'disqus_UIOm0B2Y6q'; // required: replace example with your forum shortname
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1473682098693"></script>
+
+
+  </body>
+</html>
