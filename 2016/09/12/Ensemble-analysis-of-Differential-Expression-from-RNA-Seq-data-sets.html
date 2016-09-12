@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1473683371700"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1473683371700"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1473683371700"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1473683464030"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1473683464030"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1473683464030"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1473683371700"></script>
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1473683464030"></script>
 
     <link rel="canonical" href="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
     <meta name="referrer" content="origin" />
@@ -159,7 +159,7 @@ null
             <ul class="post-meta-list">
               <li class="post-meta-item">
                 <time datetime="2016-09-12" itemprop="datePublished">
-                  13 hours ago
+                  14 hours ago
                 </time>
               </li>
               <li class="post-meta-item">
@@ -216,7 +216,7 @@ null
 <p><strong>The problem is how to take an ensemble of DE analysis methods.</strong></p>
 </div>
 <div class="paragraph">
-<p>My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  We demand that genes are DE or not, but actually, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.</p>
+<p>My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  The tyranny of p&lt;0.05 demands that genes are DE or not.  In reality, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.</p>
 </div>
 <div class="paragraph">
 <p>I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  Being a fettler at heart, I took the obvious approach.</p>
@@ -339,7 +339,7 @@ I sorted the gene list by this rank-sum metric.</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1473683371700"></script>
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1473683464030"></script>
 
 
   </body>
