@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 12:38:52 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 15:12:22 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
 <p>Recently I&#8217;ve seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It&#8217;s a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.</p>
 </div>
 <div class="paragraph">
@@ -56,6 +56,15 @@ I sorted the gene list by this rank-sum metric.</pre>
 </div>
 <div class="paragraph">
 <p>If you want a strict cut-off, because you are going to spend money on follow-up qPCR experiments, then take a cutoff where all genes above the cut-off are assessed as significant by all methods.  If you want a lax cut-off, because you want sensitivity, and you are going to follow up with a cheap bioinformatic method like functional enrichment testing, then choose the cutoff accordingly - cut-off at the point where all genes above the cutoff were found significant by at least one method, or at least two.</p>
+</div>
+<div class="paragraph">
+<p>I think there may also be principled ways to come up with a cut-off.</p>
+</div>
+<div class="paragraph">
+<p>One would expect that there is a region at the significant end of the list, where the rank correlation between methods is high, and a region at the non-significant end of the list where rank correlation between methods is low to non-existent.  One could try to detect the zone where the rank correlation starts to decay to an unacceptable degree.</p>
+</div>
+<div class="paragraph">
+<p>A different method of choosing a principled cutoff might be through some kind of leave-one-out cross-validation approach.</p>
 </div>
 <div class="paragraph">
 <p>This ensemble approach is flexible and extensible to as many different methods of DE assessment as you can choose.  My initial choices might be DESeq2, EdgeR, BaySeq, cuffdiff, and limma-voom, because they all have such different models of what it means to be DE, so are likely to form an interesting ensemble.  You might prefer your own or different methods.</p>
