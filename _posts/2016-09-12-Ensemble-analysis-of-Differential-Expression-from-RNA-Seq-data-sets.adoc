@@ -10,7 +10,7 @@ We came to the conclusion that the most robust approach was to use multiple meth
 
 Fast forward a bit and the same issue is live in RNA-Seq expression analysis.  You've aligned your reads or analysed your kmer content, and have a score or count for each gene or transcript, and you need to decide which tool to use to estimate DE.
 
-This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::https://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg[]
+This Venn diagram from Chen et al, 2015 was recently used to give a nice example of the issue: image::http://static-content.springer.com/image/art%3A10.1186%2F1471-2164-16-S7-S14/MediaObjects/12864_2015_Article_7208_Fig6_HTML.jpg[]
 
 
 *The problem is how to take an ensemble of DE analysis methods.*
