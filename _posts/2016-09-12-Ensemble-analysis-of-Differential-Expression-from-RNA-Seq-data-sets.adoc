@@ -22,20 +22,20 @@ My answer is to believe all the methods, to some extent, and to take an ensemble
 
 My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  The tyranny of p<0.05 demands that genes are DE or not.  In reality, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.
 
-I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  Being a fettler at heart, I took the obvious approach.
+I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness. A natural fettling approach suggested itself:
 
-	I used each tool to generate a ranked order list of all genes,
+	Use each tool to generate a ranked order list of all genes,
         sorted by q-value or FDR.
-	For each gene, I calculated its sum of ranks, 
+	For each gene, calculate its sum of ranks, 
         by adding up the ranks each individual method had given the gene.
-	I sorted the gene list by this rank-sum metric.
+	Sort the gene list by this rank-sum metric.
 
 
 This gave me a list of genes, sorted from most likely to be DE, as estimated by all the methods, to least likely.  Bingo, I have an ensemble DE metric.
 
-The only thing that remains is to answer that dreaded biologist question "So which genes are DE?".  The choice of cut-off in the list.
+The only thing that remains is to answer the biologist's key question "Which genes are DE?".  How to choose where to cut-off the list?
 
-My view on cut-offs is you cut your list to meet your needs.  
+My view on cut-offs is to cut the list to suit my needs.  
 
 If you want a strict cut-off, because you are going to spend money on follow-up qPCR experiments, then take a cutoff where all genes above the cut-off are assessed as significant by all methods.  If you want a lax cut-off, because you want sensitivity, and you are going to follow up with a cheap bioinformatic method like functional enrichment testing, then choose the cutoff accordingly - cut-off at the point where all genes above the cutoff were found significant by at least one method, or at least two.
 
