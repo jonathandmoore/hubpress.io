@@ -38,9 +38,9 @@
     <link href="//fonts.googleapis.com/" rel="dns-prefetch">
     <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
 
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1473693142653"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1473693142653"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1473693142653"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1473778523561"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1473778523561"/>
+    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1473778523561"/>
 
 
 
@@ -70,7 +70,7 @@
       GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
     </script>
 
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1473693142653"></script>
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1473778523561"></script>
 
     <link rel="canonical" href="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
     <meta name="referrer" content="origin" />
@@ -159,7 +159,7 @@ null
             <ul class="post-meta-list">
               <li class="post-meta-item">
                 <time datetime="2016-09-12" itemprop="datePublished">
-                  16 hours ago
+                  2 days ago
                 </time>
               </li>
               <li class="post-meta-item">
@@ -171,11 +171,11 @@ null
           </header>
           <aside class="post-side">
             <div class="post-author">
-                <a href="http://www.earlham.ac.uk/jonathan-moore" class="post-author-avatar">
+                <a href="https://jonathandmoore.github.io" class="post-author-avatar">
                   <img src="https://avatars.githubusercontent.com/u/7888298?v&#x3D;3" alt="Jonathan Moore">
                 </a>
               <div class="post-author-info">
-                <a href="http://www.earlham.ac.uk/jonathan-moore" class="post-author-name">
+                <a href="https://jonathandmoore.github.io" class="post-author-name">
                   Jonathan Moore
                 </a>
                 <p class="post-author-bio"></p>
@@ -219,25 +219,25 @@ null
 <p>My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  The tyranny of p&lt;0.05 demands that genes are DE or not.  In reality, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.</p>
 </div>
 <div class="paragraph">
-<p>I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  Being a fettler at heart, I took the obvious approach.</p>
+<p>I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness. A natural fettling approach suggested itself:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>I used each tool to generate a ranked order list of all genes,
+<pre>Use each tool to generate a ranked order list of all genes,
        sorted by q-value or FDR.
-For each gene, I calculated its sum of ranks,
+For each gene, calculate its sum of ranks,
        by adding up the ranks each individual method had given the gene.
-I sorted the gene list by this rank-sum metric.</pre>
+Sort the gene list by this rank-sum metric.</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>This gave me a list of genes, sorted from most likely to be DE, as estimated by all the methods, to least likely.  Bingo, I have an ensemble DE metric.</p>
 </div>
 <div class="paragraph">
-<p>The only thing that remains is to answer that dreaded biologist question "So which genes are DE?".  The choice of cut-off in the list.</p>
+<p>The only thing that remains is to answer the biologist&#8217;s key question "Which genes are DE?".  How to choose where to cut-off the list?</p>
 </div>
 <div class="paragraph">
-<p>My view on cut-offs is you cut your list to meet your needs.</p>
+<p>My view on cut-offs is to cut the list to suit my needs.</p>
 </div>
 <div class="paragraph">
 <p>If you want a strict cut-off, because you are going to spend money on follow-up qPCR experiments, then take a cutoff where all genes above the cut-off are assessed as significant by all methods.  If you want a lax cut-off, because you want sensitivity, and you are going to follow up with a cheap bioinformatic method like functional enrichment testing, then choose the cutoff accordingly - cut-off at the point where all genes above the cutoff were found significant by at least one method, or at least two.</p>
@@ -272,18 +272,18 @@ I sorted the gene list by this rank-sum metric.</pre>
           </div>
           <footer class="post-footer">
             <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
-                <a href="http://www.earlham.ac.uk/jonathan-moore" class="post-author-avatar">
+                <a href="https://jonathandmoore.github.io" class="post-author-avatar">
                   <img itemprop="image" src="https://avatars.githubusercontent.com/u/7888298?v&#x3D;3" alt="Jonathan Moore">
                 </a>
               <div class="post-author-info">
                 <h4 class="post-footer-heading">Written By</h4>
-                <a href="http://www.earlham.ac.uk/jonathan-moore" itemprop="url" class="post-author-name">
+                <a href="https://jonathandmoore.github.io" itemprop="url" class="post-author-name">
                   <span itemprop="name">Jonathan Moore</span>
                 </a>
                 <p itemprop="description" class="post-author-bio"></p>
                   <p class="post-author-location">Norwich, UK</p>
                   <p class="post-author-website">
-                    <a href="http://www.earlham.ac.uk/jonathan-moore" rel="nofollow">http://www.earlham.ac.uk/jonathan-moore</a>
+                    <a href="https://jonathandmoore.github.io" rel="nofollow">https://jonathandmoore.github.io</a>
                   </p>
                 <p class="post-info">
                   <b class="post-info-title">Published on</b>
@@ -348,7 +348,7 @@ I sorted the gene list by this rank-sum metric.</pre>
         hljs.initHighlightingOnLoad();
       </script>
 
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1473693142653"></script>
+    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1473778523561"></script>
 
 
   </body>
