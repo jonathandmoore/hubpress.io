@@ -1,0 +1,34 @@
+= Group Members
+
+Purnima Caim Pipelines Bioinformatician
+
+Darren Waite Bioinformatician
+
+Janet Higgins Computational Biologist
+
+
+Alumni:
+
+Ram Krishna Shrestha Pipelines Bioinformatician
+
+Yi Chan Post-Doctoral Research Fellow in Bioinformatics
+
+Yi-Fang Wang Post-Doctoral Research Fellow in Bioinformatics
+
+Clare Boddington Research Fellow in Bioinformatics
+
+Roxane Legaie Research Fellow in Bioinformatics
+
+Fadi al Naji PhD graduate jointly supervised with David Evans, St. Andrews University
+
+Vicky Ingham PhD graduate jointly supervised with Hilary Ranson, Liverpool School of Tropical Medicine
+
+Vincent Poon PhD graduate jointly supervised with Christophe Corre, Warwick Chemistry Department/School of Life Sciences
+
+Christine Hicks 3rd year PhD candidate jointly supervised with Vicky Buchanan-Wollaston, Warwick Systems Biology Centre/School of Life Sciences
+
+Stuart Nelis PhD graduate jointly supervised with Ari Sadanandom, University of Durham
+
+Adam Talbot PhD graduate jointly supervised with Vicky Buchanan-Wollaston, Warwick Systems Biology Centre/School of Life Sciences
+
+Dr. Furqan Bari PhD graduate jointly supervised with David Snead, Warwick Medical School
