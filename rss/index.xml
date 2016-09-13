@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Mon, 12 Sep 2016 15:12:22 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Jonathan Moore]]></title><description><![CDATA[Bio data fettling]]></description><link>https://jonathandmoore.github.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 13 Sep 2016 14:55:23 GMT</lastBuildDate><atom:link href="https://jonathandmoore.github.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Ensemble analysis of Differential Expression from RNA-Seq data sets]]></title><description><![CDATA[<div class="paragraph">
 <p>Recently I&#8217;ve seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It&#8217;s a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.</p>
 </div>
 <div class="paragraph">
@@ -34,25 +34,25 @@
 <p>My insight, and my gut feeling, was that when we take the Venn diagram/p-value cut-off approach, then we throw away most of the information about DE.  The tyranny of p&lt;0.05 demands that genes are DE or not.  In reality, there is a whole spectrum from 'almost definitely not DE at all' to 'almost definitely DE'.  The analysis tools even make it easy for us by giving an output of q-values, or FDR values for each gene or transcript, that are essentially a metric of 'DE-ness'.</p>
 </div>
 <div class="paragraph">
-<p>I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness.  Being a fettler at heart, I took the obvious approach.</p>
+<p>I decided to combine all these separate metrics into a single, ensemble, metric of DE-ness. A natural fettling approach suggested itself:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>I used each tool to generate a ranked order list of all genes,
+<pre>Use each tool to generate a ranked order list of all genes,
        sorted by q-value or FDR.
-For each gene, I calculated its sum of ranks,
+For each gene, calculate its sum of ranks,
        by adding up the ranks each individual method had given the gene.
-I sorted the gene list by this rank-sum metric.</pre>
+Sort the gene list by this rank-sum metric.</pre>
 </div>
 </div>
 <div class="paragraph">
 <p>This gave me a list of genes, sorted from most likely to be DE, as estimated by all the methods, to least likely.  Bingo, I have an ensemble DE metric.</p>
 </div>
 <div class="paragraph">
-<p>The only thing that remains is to answer that dreaded biologist question "So which genes are DE?".  The choice of cut-off in the list.</p>
+<p>The only thing that remains is to answer the biologist&#8217;s key question "Which genes are DE?".  How to choose where to cut-off the list?</p>
 </div>
 <div class="paragraph">
-<p>My view on cut-offs is you cut your list to meet your needs.</p>
+<p>My view on cut-offs is to cut the list to suit my needs.</p>
 </div>
 <div class="paragraph">
 <p>If you want a strict cut-off, because you are going to spend money on follow-up qPCR experiments, then take a cutoff where all genes above the cut-off are assessed as significant by all methods.  If you want a lax cut-off, because you want sensitivity, and you are going to follow up with a cheap bioinformatic method like functional enrichment testing, then choose the cutoff accordingly - cut-off at the point where all genes above the cutoff were found significant by at least one method, or at least two.</p>
