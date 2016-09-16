@@ -1,8 +1,11 @@
 = Profiles
 
+:hp-image: 
+:hp-tags: Research, Work, Links
+
 Personal output:
- Github https://github.com/jonathandmoore
- Kaggle https://www.kaggle.com/jaymoore
+	Github https://github.com/jonathandmoore
+	Kaggle https://www.kaggle.com/jaymoore
 
 Work:
  Earlham http://earlham.ac.uk/jonathan-moore
