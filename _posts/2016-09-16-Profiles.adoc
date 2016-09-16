@@ -1,12 +1,23 @@
 = Profiles
 
-Github https://github.com/jonathandmoore
-Kaggle https://www.kaggle.com/jaymoore
-Google Scholar http://scholar.google.com/citations?user=aYmxrrAAAAAJ&hl=en
-NCBI http://www.ncbi.nlm.nih.gov/sites/myncbi/collections/public/12ALmGlQglo7VlIDPks6o5n/?sort=date&direction=descending
+Personal output:
+ Github https://github.com/jonathandmoore
+ Kaggle https://www.kaggle.com/jaymoore
 
-Earlham http://earlham.ac.uk/jonathan-moore
+Work:
+ Earlham http://earlham.ac.uk/jonathan-moore
 
-ResearchGate https://www.researchgate.net/profile/Jonathan_Moore3
-Academia.edu http://warwick.academia.edu/JonathanMoore
-LinkedIn https://www.linkedin.com/in/jaymoore
+Research aggregators:
+ Google Scholar http://scholar.google.com/citations?user=aYmxrrAAAAAJ&hl=en
+ Scopus https://www.scopus.com/authid/detail.uri?authorId=55641662900
+ NCBI http://www.ncbi.nlm.nih.gov/sites/myncbi/collections/public/12ALmGlQglo7VlIDPks6o5n/?sort=date&direction=descending
+ Publons https://publons.com/author/336460/jonathan-d-moore
+ 
+Researcher ID schemes:
+ ORCID https://orcid.org/0000-0002-5486-0407
+ ResearcherID http://www.researcherid.com/rid/D-1796-2013
+
+'Social' media:
+ ResearchGate https://www.researchgate.net/profile/Jonathan_Moore3
+ Academia.edu http://warwick.academia.edu/JonathanMoore
+ LinkedIn https://www.linkedin.com/in/jaymoore
