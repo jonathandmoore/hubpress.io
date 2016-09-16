@@ -1,5 +1,7 @@
 = Ensemble analysis of Differential Expression from RNA-Seq data sets
 
+:hp-tags: RNA-Seq, Ensemble, Differential Expression
+
 Recently I've seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It's a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.
 
 For the past couple of years, my answer has been that the best method is 'all of them'.  I've come round to thinking that an ensemble of methods probably gives the best result most of the time.
