@@ -1,13 +1,13 @@
 = Group Members
 
+
+Alumni:
+
 Purnima Caim Pipelines Bioinformatician
 
 Darren Waite Bioinformatician
 
 Janet Higgins Computational Biologist
-
-
-Alumni:
 
 Ram Krishna Shrestha Pipelines Bioinformatician
 
