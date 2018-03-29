@@ -8,7 +8,7 @@ Personal output:
 	Kaggle https://www.kaggle.com/jaymoore
 
 Work:
- Earlham http://earlham.ac.uk/jonathan-moore
+ John Innes Centre http://www.jic.ac.uk/departments/cell-and-developmental-biology/
 
 Research aggregators:
  Google Scholar http://scholar.google.com/citations?user=aYmxrrAAAAAJ&hl=en
@@ -20,7 +20,8 @@ Researcher ID schemes:
  ORCID https://orcid.org/0000-0002-5486-0407
  ResearcherID http://www.researcherid.com/rid/D-1796-2013
 
-'Social' media:
+Social media:
+ Twitter https://twitter.com/jonathan1moore
  ResearchGate https://www.researchgate.net/profile/Jonathan_Moore3
  Academia.edu http://warwick.academia.edu/JonathanMoore
  LinkedIn https://www.linkedin.com/in/jaymoore
