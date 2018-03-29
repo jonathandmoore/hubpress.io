@@ -2,22 +2,33 @@
   "meta": {
     "username": "jonathandmoore",
     "repositoryName": "jonathandmoore.github.io",
-    "branch": "master"
+    "branch": "master",
+    "cname": ""
   },
   "site": {
     "title": "Jonathan Moore",
     "description": "Bio data fettling",
-    "disqus": "bio-data-fettling"
+    "disqus": "bio-data-fettling",
+    "logo": "",
+    "cover": "",
+    "delay": "",
+    "postsPerPage": "",
+    "googleAnalytics": ""
   },
   "socialnetwork": {
     "email": "",
     "twitter": "https://twitter.com/jonathan1moore",
     "googleplus": "https://plus.google.com/u/0/113375779259618122038",
     "linkedin": "https://www.linkedin.com/in/jaymoore",
-    "github": "https://github.com/jonathandmoore"
+    "github": "https://github.com/jonathandmoore",
+    "facebook": "",
+    "instagram": "",
+    "pinterest": "",
+    "flickr": "",
+    "stackoverflow": ""
   },
   "theme": {
-    "name": "ghostium"
+    "name": "Saga"
   },
   "urls": {
     "site": "https://jonathandmoore.github.io",
