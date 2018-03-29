@@ -28,12 +28,12 @@
     "stackoverflow": ""
   },
   "theme": {
-    "name": "Saga"
+    "name": "ghostium"
   },
   "urls": {
     "site": "https://jonathandmoore.github.io",
     "hubpress": "https://jonathandmoore.github.io",
-    "theme": "//jonathandmoore.github.io/themes/ghostium",
+    "theme": "//jonathandmoore.github.io/themes/saga",
     "images": "https://jonathandmoore.github.io/images"
   },
   "initialisationConfigComponent": {
