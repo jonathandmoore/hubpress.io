@@ -1,85 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Ensemble analysis of Differential Expression from RNA-Seq data sets</title>
-
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <meta name="description" content="">
-
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Ensemble analysis of Differential Expression from RNA-Seq data sets">
-    <meta name="twitter:description" content="">
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Ensemble analysis of Differential Expression from RNA-Seq data sets">
-    <meta property="og:description" content="">
-
-    <!-- <meta name="twitter:site" content="">
-
-<meta name="twitter:creator" content="">
-
-<meta name="google-site-verification" content="">
-
-<meta property="fb:admins" content="">
- -->
-
-    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link href="/apple-touch-icon-precomposed.png" rel="apple-touch-icon">
-
-    <link href="//fonts.googleapis.com/" rel="dns-prefetch">
-    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic|Open+Sans:700,400&subset=latin,latin-ext" rel="stylesheet">
-
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/main.min.css?v=1474034458418"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/custom.css?v=1474034458418"/>
-    <link rel="stylesheet" href="//jonathandmoore.github.io/themes/ghostium/assets/css/asciidoctor-foundation.css?v=1474034458418"/>
-
-
-
-
-    <script type="text/javascript">
-      var ga_ua = 'UA-XXXXX-X';
-      
-      var disqus_shortname = 'example';
-      
-      var enable_pjax = true;
-
-      // Pace Options
-      // ==============
-      window.paceOptions = {
-        catchupTime: 100,
-        minTime: 100,
-        elements: false,
-        restartOnRequestAfter: 500,
-        startOnPageLoad: false
-      }
-
-      // Ghostium Globals
-      // ==============
-      window.GHOSTIUM = {};
-      GHOSTIUM.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
-      GHOSTIUM.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
-      GHOSTIUM.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
-    </script>
-
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/head-scripts.min.js?v=1474034458418"></script>
-
+    <meta name="description" content="" />
+    <link href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:400,700,400italic" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="//jonathandmoore.github.io/themes/Saga/assets/css/style.css?v=1522321766848" rel="stylesheet" type="text/css">
+    <link href="//jonathandmoore.github.io/themes/Saga/assets/css/animate.min.css?v=1522321766848" rel="stylesheet" type="text/css">
+    <link href="https://jonathandmoore.github.io/favicon.ico" rel="shortcut icon">
     <link rel="canonical" href="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
     <meta name="referrer" content="origin" />
     
     <meta property="og:site_name" content="Jonathan Moore" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
     <meta property="og:title" content="Ensemble analysis of Differential Expression from RNA-Seq data sets" />
     <meta property="og:description" content="Recently I&amp;#8217;ve seen discussions among bioinformatians of which is &#x27;the best&#x27; method for DE analysis of RNA-Seq data.  It&amp;#8217;s a recurring theme, and mostly the answer is &#x27;it depends on context and aims&#x27; although there is also evidence that some methods are just better than others." />
     <meta property="og:url" content="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
+    <meta property="article:published_time" content="2016-09-12T00:00:00.000Z" />
     <meta property="article:tag" content="RNA-Seq" />
     <meta property="article:tag" content=" Ensemble" />
     <meta property="article:tag" content=" Differential Expression" />
@@ -90,109 +33,55 @@
     <meta name="twitter:url" content="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" />
     
     <script type="application/ld+json">
-null
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Jonathan Moore",
+    "author": {
+        "@type": "Person",
+        "name": "Jonathan Moore",
+        "image": "https://avatars1.githubusercontent.com/u/7888298?v=4",
+        "url": "https://jonathandmoore.github.io/author/jonathandmoore/",
+        "sameAs": "https://jonathandmoore.github.io"
+    },
+    "headline": "Ensemble analysis of Differential Expression from RNA-Seq data sets",
+    "url": "https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html",
+    "datePublished": "2016-09-12T00:00:00.000Z",
+    "keywords": "RNA-Seq,  Ensemble,  Differential Expression",
+    "description": "Recently I&amp;#8217;ve seen discussions among bioinformatians of which is &#x27;the best&#x27; method for DE analysis of RNA-Seq data.  It&amp;#8217;s a recurring theme, and mostly the answer is &#x27;it depends on context and aims&#x27; although there is also evidence that some methods are just better than others."
+}
     </script>
 
     <meta name="generator" content="HubPress" />
     <link rel="alternate" type="application/rss+xml" title="Jonathan Moore" href="https://jonathandmoore.github.io/rss/" />
-  </head>
-  <body class="post-template tag-RNA-Seq tag-Ensemble tag-Differential-Expression">
-
-    <button data-action="open-drawer" id="drawer-button" class="drawer-button"><i class="fa fa-bars"></i></button>
-    <nav tabindex="-1" class="drawer">
-      <div class="drawer-container">
-        <!--.drawer-search(role="search")-->
-        <ul role="navigation" class="drawer-list">
-          
-          <li class="drawer-list-item">
-            <a href="https://jonathandmoore.github.io" data-pjax>
-              <i class="fa fa-home"></i>Home
-            </a>
-          </li>
-          <!-- <li class="drawer-list-item">
-            <a href="https://jonathandmoore.github.io" title="Jonathan Moore" data-pjax>
-              <i class="fa fa-list-alt"></i>All posts
-            </a>
-          </li> -->
-          <li class="drawer-list-item">
-            <a href="https://jonathandmoore.github.io/rss/">
-              <i class="fa fa-rss"></i>Subscribe to Feed
-            </a>
-          </li>
-          <li class="drawer-list-divider"></li>
-          <li class="drawer-list-item drawer-list-title">
-            Follow me
-          </li>
-          
-          
-          <li class="drawer-list-item">
-            <a href="https://twitter.com/jonathan1moore" title="Twitter" target="_blank">
-              <i class="fa fa-twitter"></i>Twitter
-            </a>
-          </li>
-          <li class="drawer-list-item">
-            <a href="https://github.com/jonathandmoore" title="Github" target="_blank">
-              <i class="fa fa-github"></i>Github
-            </a>
-          </li>
-          <li class="drawer-list-item">
-            <a href="https://plus.google.com/u/0/113375779259618122038" title="Google+" target="_blank">
-              <i class="fa fa-google-plus"></i>Google+
-            </a>
-          </li>
-          <li class="drawer-list-item">
-            <a href="https://www.linkedin.com/in/jaymoore" title="LinkedIn" target="_blank">
-              <i class="fa fa-linkedin"></i>LinkedIn
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="drawer-overlay"></div>
-    <main id="container" role="main" class="container">
-      <div class="surface">
-        <div class="surface-container">
-          <div data-pjax-container class="content">
-            
-<section class="wrapper wrapper-post">
-  <div class="wrapper-container">
-    <article itemscope itemtype="http://schema.org/BlogPosting" role="article" class="post post tag-RNA-Seq tag-Ensemble tag-Differential-Expression">
-        <section class="post-container">
-          <header class="post-header">
-            <ul class="post-meta-list">
-              <li class="post-meta-item">
-                <time datetime="2016-09-12" itemprop="datePublished">
-                  5 days ago
-                </time>
-              </li>
-                <li class="post-meta-item">
-                  <span class="tags"><i class="fa fa-tags"></i>
-                      <span>
-                      <a href="https://jonathandmoore.github.io/tag/RNA-Seq/">RNA-Seq</a>, <a href="https://jonathandmoore.github.io/tag/Ensemble/"> Ensemble</a>, <a href="https://jonathandmoore.github.io/tag/Differential-Expression/"> Differential Expression</a></span>
-                  </span>
-                </li>
-              <li class="post-meta-item">
-                <a href="#disqus_thread" data-disqus-identifier="">Comments</a>
-              </li>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+</head>
+<body class="post-template tag-RNA-Seq tag-Ensemble tag-Differential-Expression">
+    <header id="header" class="animated fadeIn">
+    <div class="header-background">
+    <section class="blog-content">
+        <a id="site-url" class="blog-title" href="https://jonathandmoore.github.io">Jonathan Moore</a>
+        <span class="blog-description">Bio data fettling</span>
+        <nav class="links fadeIn animated">
+            <ul>
+                <li class="rss"><a title="RSS Feed" href="/rss/"><i class="fa fa-fw fa-rss-square"></i></a></li>
+        
             </ul>
-            <h1 itemprop="name headline" class="post-title"><a href="https://jonathandmoore.github.io/2016/09/12/Ensemble-analysis-of-Differential-Expression-from-RNA-Seq-data-sets.html" itemprop="url" data-pjax title="Ensemble analysis of Differential Expression from RNA-Seq data sets">Ensemble analysis of Differential Expression from RNA-Seq data sets</a></h1>
-            <!--h2 itemprop="about" class="post-subtitle"></h2-->
-          </header>
-          <aside class="post-side">
-            <div class="post-author">
-                <a href="https://jonathandmoore.github.io" class="post-author-avatar">
-                  <img src="https://avatars.githubusercontent.com/u/7888298?v&#x3D;3" alt="Jonathan Moore">
-                </a>
-              <div class="post-author-info">
-                <a href="https://jonathandmoore.github.io" class="post-author-name">
-                  Jonathan Moore
-                </a>
-                <p class="post-author-bio"></p>
-              </div>
-            </div>
-          </aside>
-          <div itemprop="articleBody" class="post-body">
+        </nav>
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">Ensemble analysis of Differential Expression from RNA-Seq data sets</h1>
+        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="1473634800" datetime="2016-09-12T00:00" title="12 September 2016">2 years ago</time></span>
+            <span class="tags animated fadeInUp"><i class="fa fa-tags"></i> <a href="https://jonathandmoore.github.io/tag/RNA-Seq/">RNA-Seq</a>, <a href="https://jonathandmoore.github.io/tag/Ensemble/"> Ensemble</a>, <a href="https://jonathandmoore.github.io/tag/Differential-Expression/"> Differential Expression</a></span>
+            <span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="https://jonathandmoore.github.io/author/jonathandmoore/">Jonathan Moore</a></span></span>
+    </section>
+    </div>
+</header>
+<main id="main" class="content">
+    <article itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post post tag-RNA-Seq tag-Ensemble tag-Differential-Expression">
+        <section class="post-content">
             <div class="paragraph">
 <p>Recently I&#8217;ve seen discussions among bioinformatians of which is 'the best' method for DE analysis of RNA-Seq data.  It&#8217;s a recurring theme, and mostly the answer is 'it depends on context and aims' although there is also evidence that some methods are just better than others.</p>
 </div>
@@ -279,73 +168,39 @@ Sort the gene list by this rank-sum metric.</pre>
 <div class="paragraph">
 <p>Have you used an ensemble method for estimating differential gene expression?  Do you think this is a worthwhile approach?</p>
 </div>
-          </div>
-          <footer class="post-footer">
-            <div itemprop="author" itemscope itemtype="http://schema.org/Person" class="post-author">
-                <a href="https://jonathandmoore.github.io" class="post-author-avatar">
-                  <img itemprop="image" src="https://avatars.githubusercontent.com/u/7888298?v&#x3D;3" alt="Jonathan Moore">
-                </a>
-              <div class="post-author-info">
-                <h4 class="post-footer-heading">Written By</h4>
-                <a href="https://jonathandmoore.github.io" itemprop="url" class="post-author-name">
-                  <span itemprop="name">Jonathan Moore</span>
-                </a>
-                <p itemprop="description" class="post-author-bio"></p>
-                  <p class="post-author-location">Norwich, UK</p>
-                  <p class="post-author-website">
-                    <a href="https://jonathandmoore.github.io" rel="nofollow">https://jonathandmoore.github.io</a>
-                  </p>
-                <p class="post-info">
-                  <b class="post-info-title">Published on</b>
-                  <time class="post-date">September 12, 2016</time>
-                </p>
-              </div>
-            </div>
-            <div class="post-social">
-              <h4 class="post-footer-heading">Spread the word</h4>
-              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
-              <a href="#" data-action="share-facebook"><i class="fa fa-fw fa-lg fa-facebook"></i></a>
-              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
-            </div>
-          </footer>
         </section>
-      <section itemprop="comment" class="post-comments">
-        <div id="disqus_thread"></div>
-      </section>
+
+    
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'bio-data-fettling'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+    
     </article>
 
-    <footer role="contentinfo" class="footer">
-      <p><small>Copyright &copy; <span itemprop="copyrightHolder">Jonathan Moore</span>. 2016. All Rights Reserved.</small></p>
-      <p><small><a href="http://ghostium.oswaldoacauan.com/" target="_blank">Ghostium Theme</a> by <a href="http://twitter.com/oswaldoacauan" target="_blank">@oswaldoacauan</a></small></p>
-      <p><small>Adapted by <a href="https://twitter.com/mgreau">Maxime Gréau</a></small></p>
-      <p><small>Published with <a href="http://hubpress.io">HubPress</a></small></p>
+</main>
+    <footer class="animated fadeIn" id="footer">
+        <section class="colophon">
+          <section class="copyright">Copyright &copy; <span itemprop="copyrightHolder">Jonathan Moore</span>. <span rel="license">All Rights Reserved</span>.</section>
+          <section class="poweredby">Published with <a class="icon-ghost" href="http://hubpress.io">HubPress</a></section>
+        </section>
+        <section class="bottom">
+          <section class="attribution">
+            <a href="http://github.com/Reedyn/Saga">Built with <i class="fa fa-heart"></i> and Free and Open-Source Software</a>.
+          </section>
+        </section>
     </footer>
-  </div>
-</section>
-
-
-<section class="post-comments">
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-  var disqus_shortname = 'bio-data-fettling'; // required: replace example with your forum shortname
-  /* * * DON'T EDIT BELOW THIS LINE * * */
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</section>
-
-
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js?v="></script> 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
       <script type="text/javascript">
         jQuery( document ).ready(function() {
           // change date with ago
@@ -357,9 +212,7 @@ Sort the gene list by this rank-sum metric.</pre>
 
         hljs.initHighlightingOnLoad();
       </script>
-
-    <script src="//jonathandmoore.github.io/themes/ghostium/assets/js/foot-scripts.min.js?v=1474034458418"></script>
-
-
-  </body>
+    <script src="//jonathandmoore.github.io/themes/Saga/assets/js/scripts.js?v=1522321766848"></script>
+    
+</body>
 </html>
